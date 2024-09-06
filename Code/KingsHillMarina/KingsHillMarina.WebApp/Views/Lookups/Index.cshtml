@@ -1,0 +1,53 @@
+﻿@model KingsHillMarina.WebApp.Models.LookupsVM
+
+
+@{
+    ViewBag.Title = "Lookups management";
+    var type = Model.Type;
+}
+
+<div class="bs-callout bs-callout-primary">
+
+    <p class="well lead bs-callout bs-callout-primary" style="font-weight:bolder">Lookups Management</p>
+
+    <ul class="nav nav-tabs" style="margin-bottom:10px;">
+        <li id="BoatMake" class="cursor no-wrap" onclick="showRegion('BoatMake')">
+            <a href="" data-toggle="tab">Boat Make</a>
+        </li>
+        <li id="BoatType" class="cursor no-wrap" onclick="showRegion('BoatType')">
+            <a href="" data-toggle="tab">Boat Type</a>
+        </li>
+        <li id="Charge" class="cursor no-wrap" onclick="showRegion('Charge')">
+            <a href="" data-toggle="tab">Charge</a>
+        </li>
+
+    </ul>
+
+    @if (type == "BoatMake")
+    {
+        <div id="divBoatMake">
+            @{ Html.RenderPartial("_BoatMake", Model); }
+        </div>
+       
+    }
+    else if (type == "BoatType")
+
+    {
+        <div id="divBoatType">
+            @{ Html.RenderPartial("_BoatType", Model); }
+        </div>
+       
+    }
+    else if (type == "Charge")
+    {
+        <div id="divCharge">
+            @{ Html.RenderPartial("_Charge", Model); }
+        </div>
+       
+    }
+  
+</div>
+
+<script type="text/javascript" src="~/Scripts/Custom/Tabs.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+<script type="text/javascript" src="~/Scripts/Custom/Lookups.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+

@@ -1,0 +1,5 @@
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Utilities\obj\Debug\KingsHillMarina.Utilities.csproj.CoreCompileInputs.cache
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Utilities\bin\Debug\KingsHillMarina.Utilities.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Utilities\bin\Debug\KingsHillMarina.Utilities.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Utilities\obj\Debug\KingsHillMarina.Utilities.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Utilities\obj\Debug\KingsHillMarina.Utilities.pdb

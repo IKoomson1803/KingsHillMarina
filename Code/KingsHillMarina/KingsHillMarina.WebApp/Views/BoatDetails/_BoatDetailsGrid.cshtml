@@ -1,0 +1,209 @@
+﻿@model KingsHillMarina.WebApp.Models.BoatDetailsVM
+
+
+@{
+    var boatDetailsList = Model.BoatDetailsList;
+    var itemCount = boatDetailsList.Count;
+    var itemNo = 0;
+}
+
+@if (boatDetailsList != null && boatDetailsList.Any())
+{
+
+
+    @*<div class="row">
+        <div class="col-xs-4 float-left">
+            <div class="btn btn-xs btn-primary">
+                Boats Count
+                <span class="badge"> @itemCount</span>
+            </div>
+        </div>
+    </div>*@
+
+
+    <div class="row">
+
+        <div class="col-xs-12" style="overflow: auto;">
+            <table id="tblBoatDetails" cellspacing="0" class="table table-striped table-condensed display grid-view" style="width:100%">
+                <thead>
+                    <tr>
+                        <td class="itemNumber"> Item No.</td>
+                        <td>Name</td>
+                        <td>Length (m)</td>
+                        <td>Make</td>
+                        <td>Type</td>
+                        <td>Pier</td>
+                        <td>Berth</td>
+                        <td>Date Berthed</td>
+                        <td>Charge (£)</td>
+                        <td>Owner First Name</td>
+                        <td>Owner Last Name</td>
+                        <td class="col-xs-4">Owner Address</td>
+                        <td>Owner Telephone</td>
+                        <td>Owner Email</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var boatDetails in boatDetailsList)
+                    {
+                        itemNo++;
+
+                    <tr class='clickable-row' style="cursor:pointer;" data-id="@boatDetails.Id" title="Click the row to update boat details">
+                        <td class="col-xs-1 itemNumber">@itemNo</td>
+
+                        <td class="col-xs-4">
+                            @boatDetails.Name
+                        </td>
+                        <td class="col-xs-1">
+                            @boatDetails.Length
+                        </td>
+                        <td class="col-xs-3">
+                            @boatDetails.Make
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.Type
+                        </td>
+                        <td class="col-xs-1">
+                            @boatDetails.Pier
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.Berth
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.DateBerthed.ToString("dd/MM/yyyy")
+                        </td>
+                        <td class="col-xs-2">
+                            @if (boatDetails.Charge > 0)
+                            {
+                                @boatDetails.Charge
+                            }
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.OwnerFirstName
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.OwnerLastName
+                        </td>
+                        <td class="col-xs-6">
+                            @boatDetails.OwnerAddress
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.OwnerTelephone
+                        </td>
+                        <td class="col-xs-2">
+                            @boatDetails.OwnerEmail
+                        </td>
+
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+
+      
+
+
+    </div>
+
+
+ }
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $('.clickable-row').on('click', function () {
+
+            $('table tr').removeClass("selectedRow");
+            $(this).addClass("selectedRow");
+            var id = $(this).data('id');
+            $('#btnShowDeactivatePrompt').show();
+            $('#btnSave').text('Update');
+            PopulateBoatDetails(id);
+
+        });
+
+    });
+
+    function PopulateBoatDetails(id) {
+
+
+        $.get('/BoatDetails/GetById', { id: id }).done(function (data) {
+
+            $('#BoatDetails_Id').val(data.Id);
+            $('#BoatDetails_Name').val(data.Name);
+            $('#BoatDetails_Length').val(data.Length);
+            $('#BoatDetails_MakeId').val(data.MakeId);
+            $('#BoatDetails_TypeId').val(data.TypeId);
+            $('#BoatDetails_Pier').val(data.Pier);
+            $('#BoatDetails_Berth').val(data.Berth);
+            $('#BoatDetails_OwnerFirstName').val(data.OwnerFirstName);
+            $('#BoatDetails_OwnerLastName').val(data.OwnerLastName);
+            $('#BoatDetails_OwnerAddress').val(data.OwnerAddress);
+            $('#BoatDetails_OwnerTelephone').val(data.OwnerTelephone);
+            $('#BoatDetails_OwnerEmail').val(data.OwnerEmail);
+
+            window.scrollTo(0, 0)  // Scroll th window to top
+
+        })
+            .fail(function (xdata) {
+
+                Msg.error('Error occured! <b>Status:</b> ' + xdata.status + ' <b>Error Message:</b> ' + xdata.statusText, 5 * 1000);
+            })
+            .always(function () {
+
+
+            });
+    }
+
+</script>
+
+<script src="~/Scripts/Custom/DataTable.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+﻿@model KingsHillMarina.WebApp.Models.LookupsVM
+
+
+@{
+    var boatMakes = Model.BoatMakes;
+    var itemNo = 0;
+
+}
+
+<h4>Boat Makes</h4>
+
+
+@using (Html.BeginForm("SaveMake", "Lookups", FormMethod.Post, new { @class = "form-horizontal form-group-sm", @style = "margin-top: 20px;", @id = "frmBoatMake" }))
+{
+    @Html.HiddenFor(m => m.BoatMake.Id);
+
+    <div class="row">
+        <div class="col-sm-1 text-left">
+            <label class="control-label">Name:</label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+            @Html.TextBoxFor(m => m.BoatMake.Name, new { @class = "form-control", @style = "width:250px" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 text-right">
+            &nbsp;
+        </div>
+
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-xs btn-primary CRUDButton" id="btnSaveBoatMake">Add New</button>
+            <button type="button" class="btn btn-xs btn-danger CRUDButton" id="btnResetBoatMake">Cancel</button>
+        </div>
+
+    </div>
+
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        &nbsp;
+    </div>
+</div>
+
+
+
+@if (boatMakes != null && boatMakes.Any())
+{
+    <div class="row">
+
+        <div class="col-xs-12" style="overflow: auto;">
+            <table id="tblBoatMakes" cellspacing="0" class="table table-striped table-condensed display grid-view" style="width:100%">
+                <thead>
+                    <tr>
+                        <td class="itemNumber"> Item No.</td>
+                        <td>Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var boatMake in boatMakes)
+                    {
+                        itemNo++;
+
+                        <tr class="clickable-boatmake-row" style="cursor:pointer;" data-id="@boatMake.Id" title="Click the row to update boat make">
+                            <td class="col-xs-1 itemNumber">@itemNo</td>
+
+                            <td class="col-xs-4">
+                                @boatMake.Name
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+}
+
+
+<script src="~/Scripts/Custom/DataTable.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+
+
+        $('.clickable-boatmake-row').on('click', function () {
+
+            $('table tr').removeClass("selectedRow");
+            $(this).addClass("selectedRow");
+            var id = $(this).data('id');
+            $('#btnSaveBoatMake').text('Update');
+            GetBoatMakeById(id);
+
+        });
+
+    });
+
+    function GetBoatMakeById(id) {
+
+        $.get('/Lookups/GetBoatMakeById', { id: id }).done(function (data) {
+
+            $('#BoatMake_Id').val(data.Id);
+            $('#BoatMake_Name').val(data.Name);
+            window.scrollTo(0, 0)  // Scroll th window to top
+
+        })
+            .fail(function (xdata) {
+
+                Msg.error('Error occured! <b>Status:</b> ' + xdata.status + ' <b>Error Message:</b> ' + xdata.statusText, 5 * 1000);
+            })
+            .always(function () {
+
+
+            });
+
+    }
+</script>

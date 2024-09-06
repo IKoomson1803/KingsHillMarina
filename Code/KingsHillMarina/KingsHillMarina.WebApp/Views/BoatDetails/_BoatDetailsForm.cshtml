@@ -1,0 +1,163 @@
+﻿@model KingsHillMarina.WebApp.Models.BoatDetailsVM
+
+
+@using (Html.BeginForm("Save", "BoatDetails", FormMethod.Post, new { @class = "form-horizontal form-group-sm", @style = "margin-top: 20px;", @id = "form_boatdetails" }))
+{
+
+    @Html.HiddenFor(m => m.BoatDetails.Id);
+
+<div class="row">
+    <div class="col-sm-1 text-left">
+        <label class="control-label">Name:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.Name, new { @class = "form-control", @style = "width:250px" })
+    </div>
+
+    <div class="col-sm-2 text-right">
+        <label class="control-label">Length:</label>
+    </div>
+
+    <div class="col-sm-1 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.Length, new { @class = "form-control", @style = "width:70px", @type = "number" })
+    </div>
+
+    <div class="col-sm-1 text-right">
+        <label class="control-label">Make:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        
+        @Html.DropDownListFor(m => m.BoatDetails.MakeId, new SelectList(Model.BoatMakeList,"key","value"),
+        "", new
+             {
+                 @class = "form-control",
+               @style = "width:150px"
+             })
+    </div>
+
+    
+</div>
+
+
+<div class="row">
+
+    <div class="col-sm-1 text-left">
+        <label class="control-label">Type:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.DropDownListFor(m => m.BoatDetails.TypeId, new SelectList(Model.BoatTypeList, "key", "value"),
+       "", new
+            {
+                @class = "form-control",
+              @style = "width:150px"
+            })
+    </div>
+
+    <div class="col-sm-1 text-right">
+        <label class="control-label">Pier:</label>
+    </div>
+
+    <div class="col-sm-1 form-group">
+        @Html.DropDownListFor(m => m.BoatDetails.Pier, new SelectList(Model.PierList),
+        "", new
+             {
+                 @class = "form-control",
+            @style = "width:70px"
+             })
+    </div>
+
+    <div class="col-sm-1 text-right">
+        <label class="control-label">Berth:</label>
+    </div>
+
+    <div class="col-sm-1 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.Berth, new { @class = "form-control", @style = "width:245px" })
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col-sm-2 text-left">
+        <label class="control-label">Owner First Name:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.OwnerFirstName, new { @class = "form-control", @style = "width:150px" })
+    </div>
+
+    <div class="col-sm-2 text-right">
+        <label class="control-label">Owner Last Name:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.OwnerLastName, new { @class = "form-control", @style = "width:160px" })
+    </div>
+
+  
+</div>
+
+<div class="row">
+
+
+    <div class="col-sm-2 text-left">
+        <label class="control-label">Owner Address:</label>
+    </div>
+
+    <div class="col-sm-8 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.OwnerAddress, new { @class = "form-control", @style = "width:505px" })
+    </div>
+
+    
+</div>
+
+<div class="row">
+
+
+
+    <div class="col-sm-2 text-left">
+        <label class="control-label">Owner Telephone:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.OwnerTelephone, new { @class = "form-control", @style = "width:120px" })
+    </div>
+
+    <div class="col-sm-2 text-right">
+        <label class="control-label">Owner Email:</label>
+    </div>
+
+    <div class="col-sm-2 form-group">
+        @Html.TextBoxFor(m => m.BoatDetails.OwnerEmail, new { @class = "form-control", @style = "width:160px", @type="email" })
+    </div>
+</div>
+
+<div class="row">
+   
+    <div class="col-xs-4" id="mandatory">
+       *** All the fields are required ***
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-sm-2 text-right">
+        &nbsp;
+    </div>
+
+    <div class="col-xs-4">
+        <button type="button" class="btn btn-xs btn-primary CRUDButton" id="btnSave">Add New</button>
+        <button type="button" class="btn btn-xs btn-danger CRUDButton" id="btnReset">Cancel</button>
+       <button type="button" class="btn btn-xs btn-warning CRUDButton" id="btnShowDeactivatePrompt"  >Deactivate</button>
+    </div>
+
+</div>
+
+
+
+}
+
+

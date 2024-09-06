@@ -1,0 +1,14 @@
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\obj\Debug\KingsHillMarina.Services.csproj.AssemblyReference.cache
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\obj\Debug\KingsHillMarina.Services.csproj.CoreCompileInputs.cache
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Services.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Services.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Domain.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Repositories.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Utilities.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\Dapper.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Domain.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Repositories.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\bin\Debug\KingsHillMarina.Utilities.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\obj\Debug\KingsHillMarina.Services.csproj.CopyComplete
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\obj\Debug\KingsHillMarina.Services.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.Services\obj\Debug\KingsHillMarina.Services.pdb

@@ -1,0 +1,37 @@
+﻿
+@model KingsHillMarina.WebApp.Models.BoatDetailsVM
+
+@{
+    ViewBag.Title = "Boat Details";
+}
+
+<div class="col-sm-12 bs-callout bs-callout-danger">
+
+    <p class="well lead bs-callout bs-callout-danger" style="font-weight:bolder">Boat Details</p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            @{
+                Html.RenderPartial("_BoatDetailsForm", Model);
+            }
+
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+        <div class="col-xs-12" id="divContent">
+            @{
+                Html.RenderPartial("_BoatDetailsGrid", Model);
+            }
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<script type="text/javascript" src="~/Scripts/Custom/BoatDetails.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+

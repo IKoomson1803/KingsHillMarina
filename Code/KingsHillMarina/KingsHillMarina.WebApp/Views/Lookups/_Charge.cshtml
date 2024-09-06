@@ -1,0 +1,39 @@
+﻿@model KingsHillMarina.WebApp.Models.LookupsVM
+
+<h4>Charge</h4>
+
+@using (Html.BeginForm("SaveChar", "Lookups", FormMethod.Post, new { @class = "form-horizontal form-group-sm", @style = "margin-top: 20px;", @id = "frmCharge" }))
+{
+    @Html.HiddenFor(m => m.Charge.Id);
+
+<div class="row">
+    <div class="col-sm-2 text-left">
+        <label class="control-label">Amount (£}:</label>
+    </div>
+
+    <div class="col-sm-1 form-group">
+        @Html.TextBoxFor(m => m.Charge.Amount, new { @class = "form-control", @style = "width:100px" , @type="number"})
+    </div>
+
+    <div class="col-sm-2 text-right">
+        <label class="control-label">VAT (%):</label>
+    </div>
+
+    <div class="col-sm-1 form-group">
+        @Html.TextBoxFor(m => m.Charge.VAT, new { @class = "form-control", @style = "width:100px",  @type = "number" })
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-sm-2 text-right">
+            &nbsp;
+        </div>
+
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-xs btn-primary CRUDButton" id="btnSaveCharge">Save</button>
+            <button type="button" class="btn btn-xs btn-danger CRUDButton" id="btnResetCharge">Cancel</button>
+        </div>
+
+    </div>
+
+}

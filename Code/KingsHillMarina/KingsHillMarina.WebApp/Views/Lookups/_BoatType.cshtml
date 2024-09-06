@@ -1,0 +1,124 @@
+﻿@model KingsHillMarina.WebApp.Models.LookupsVM
+
+
+@{
+    var boatTypes = Model.BoatTypes;
+    var itemNo = 0;
+
+}
+
+<h4>Boat Types</h4>
+
+@using (Html.BeginForm("SaveType", "Lookups", FormMethod.Post, new { @class = "form-horizontal form-group-sm", @style = "margin-top: 20px;", @id = "frmBoatType" }))
+{
+    @Html.HiddenFor(m => m.BoatType.Id);
+
+    <div class="row">
+        <div class="col-sm-1 text-left">
+            <label class="control-label">Name:</label>
+        </div>
+
+        <div class="col-sm-2 form-group">
+            @Html.TextBoxFor(m => m.BoatType.Name, new { @class = "form-control", @style = "width:250px" })
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-1 text-right">
+            &nbsp;
+        </div>
+
+        <div class="col-xs-4">
+            <button type="button" class="btn btn-xs btn-primary CRUDButton" id="btnSaveBoatType">Add New</button>
+            <button type="button" class="btn btn-xs btn-danger CRUDButton" id="btnResetBoatType">Cancel</button>
+        </div>
+
+    </div>
+
+}
+
+
+<div class="row">
+    <div class="col-xs-12">
+        &nbsp;
+    </div>
+</div>
+
+
+@if (boatTypes != null && boatTypes.Any())
+{
+    <div class="row">
+
+        <div class="col-xs-12" style="overflow: auto;">
+            <table id="tblBoatTypes" cellspacing="0" class="table table-striped table-condensed display grid-view" style="width:100%">
+                <thead>
+                    <tr>
+                        <td class="itemNumber"> Item No.</td>
+                        <td>Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var boatType in boatTypes)
+                    {
+                        itemNo++;
+                        <tr class="clickable-boattype-row" style="cursor:pointer;" data-id="@boatType.Id" title="Click the row to update boat type">
+                            <td class="col-xs-1 itemNumber">@itemNo</td>
+
+                            <td class="col-xs-4">
+                                @boatType.Name
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+}
+
+<script src="~/Scripts/Custom/DataTable.js?v=@DateTime.Now.ToString("yyyyMMddHHmmss")"></script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $('.clickable-boattype-row').on('click', function () {
+
+            $('table tr').removeClass("selectedRow");
+            $(this).addClass("selectedRow");
+            var id = $(this).data('id');
+            $('#btnSaveBoatType').text('Update');
+            GetBoatTypeById(id);
+
+        });
+
+    });
+
+
+
+    function GetBoatTypeById(id) {
+
+        $.get('/Lookups/GetBoatTypeById', { id: id }).done(function (data) {
+
+            $('#BoatType_Id').val(data.Id);
+            $('#BoatType_Name').val(data.Name);
+            window.scrollTo(0, 0)  // Scroll th window to top
+
+        })
+            .fail(function (xdata) {
+
+                Msg.error('Error occured! <b>Status:</b> ' + xdata.status + ' <b>Error Message:</b> ' + xdata.statusText, 5 * 1000);
+            })
+            .always(function () {
+
+
+            });
+
+    }
+
+
+
+</script>

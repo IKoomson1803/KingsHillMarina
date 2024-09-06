@@ -1,0 +1,17 @@
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.ConsoleTestApp.exe.config
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.ConsoleTestApp.exe
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.ConsoleTestApp.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\obj\Debug\KingsHillMarina.ConsoleTestApp.csproj.CoreCompileInputs.cache
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\obj\Debug\KingsHillMarina.ConsoleTestApp.exe
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\obj\Debug\KingsHillMarina.ConsoleTestApp.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Domain.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Repositories.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Services.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Utilities.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\Dapper.dll
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Domain.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Repositories.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Services.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\bin\Debug\KingsHillMarina.Utilities.pdb
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\obj\Debug\KingsHillMarina.ConsoleTestApp.csproj.AssemblyReference.cache
+D:\Mof\Interviews Technical Questions\Keystone - 28-08-2024\Code\KingsHillMarina\KingsHillMarina.ConsoleTestApp\obj\Debug\KingsHillMarina.ConsoleTestApp.csproj.CopyComplete
